@@ -1,8 +1,20 @@
-node {
-    label "any"
-    properties([pipelineTriggers([pollSCM('')])])
-    checkout scm
-    jobDsl targets: ['jobs/*.groovy'].join('\n'),
-        removedJobAction: 'DELETE',
-        removedViewAction: 'DELETE'
+pipeline {
+    agent any
+    triggers {
+        pollSCM('* * * * *')
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Generate Jobs') {
+            steps {
+                jobDsl targets: ['jobs/*.groovy'].join('\n'),
+                    removedJobAction: 'DELETE',
+                    removedViewAction: 'DELETE'
+            }
+        }
+    }
 }
