@@ -5,6 +5,4 @@ def gitStuff = [
         user: stashUser,
         repo: 'cicd-infra'
     ]
-
-
 ]

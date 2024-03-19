@@ -4,6 +4,15 @@ import projects
 String stashUrl = 'git@github.com:rajendra-gangwar'
 String stashUser = 'jenkins'
 
+def gitStuff = [
+    [
+        project: '',
+        url: stashUrl,
+        user: stashUser,
+        repo: 'cicd-infra'
+    ]
+]
+
 inclusions = "main"
 excludes = "dev"
 
