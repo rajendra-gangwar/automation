@@ -12,7 +12,7 @@ pipeline {
         stage('Generate Jobs') {
             steps {
                 script {
-                    def jobDSLScript = readFile('jobs/jobDSLScript.groovy') // Assuming your job DSL script is in 'jobs/jobDSLScript.groovy'
+                    def jobDSLScript = readFile('jobs/build.groovy')
                     jobDsl(scriptText: jobDSLScript, removedJobAction: 'DELETE', removedViewAction: 'DELETE')
                 }
             }
