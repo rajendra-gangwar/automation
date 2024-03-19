@@ -1,3 +1,11 @@
+import groovy.json.JsonSlurper
+import ../project
+
+String stashUrl = 'git@github.com:rajendra-gangwar'
+String stashUser = 'jenkins'
+
+inclusions = "main"
+excludes = "dev"
 
 gitStuff.each{ Map entry ->
     multibranchPipelineJob("${entry.repo}-autobuild") {
