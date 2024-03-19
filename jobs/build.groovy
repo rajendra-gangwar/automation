@@ -1,5 +1,4 @@
 import groovy.json.JsonSlurper
-import projects
 
 String stashUrl = 'git@github.com:rajendra-gangwar'
 String stashUser = 'jenkins'
