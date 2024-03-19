@@ -1,21 +1,8 @@
-pipeline {
-    agent any
-    triggers {
-        pollSCM('* * * * *') // Example cron syntax for polling every minute
-    }
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-        stage('Generate Jobs') {
-            steps {
-                script {
-                    def jobDSLScript = readFile('jobs/build.groovy')
-                    jobDsl(scriptText: jobDSLScript, removedJobAction: 'DELETE', removedViewAction: 'DELETE')
-                }
-            }
-        }
-    }
+node {
+    label "any"
+    properties([pipelineTriggers([pollSCM('')])])
+    checkout scm
+    jobDsl targets: ['jobs/*.groovy'].join('\n'),
+        removedJobAction: 'DELETE',
+        removedViewAction: 'DELETE'
 }
