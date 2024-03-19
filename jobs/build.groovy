@@ -3,6 +3,7 @@ import groovy.json.JsonSlurper
 String stashUrl = 'git@github.com:rajendra-gangwar'
 String stashUser = 'jenkins'
 
+/*
 def gitStuff = [
     [
         project: '',
@@ -11,11 +12,16 @@ def gitStuff = [
         repo: 'cicd-infra'
     ]
 ]
+*/
 
 def inclusions = "main"
 def exclusions = "dev"
 
-gitStuff.each{ Map entry ->
+def gitStuffJson = new File('../projects.json').text
+def gitStuff = new JsonSlurper().parseText(gitStuffJson)
+
+
+gitStuff.each{ entry ->
     multibranchPipelineJob("${entry.repo}-autobuild") {
         branchSources {
             branchSource {
