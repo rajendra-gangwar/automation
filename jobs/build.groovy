@@ -17,12 +17,12 @@ def gitStuff = [
 def inclusions = "main"
 def exclusions = "dev"
 
+def workspacePath = "${System.getenv('WORKSPACE')}"
+def jobName = "${System.getenv('JOB_NAME')}"
+def filePath = "${workspacePath}/${jobName}/projects.json"
 
-def relativePath = 'projects.json'
-def absolutePath = "${System.getProperty('user.dir')}/${relativePath}"
-println "Absolute path: ${absolutePath}"
 
-def gitStuffJson = new File(absolutePath).text
+def gitStuffJson = new File(filePath).text
 def gitStuff = new JsonSlurper().parseText(gitStuffJson)
 
 
