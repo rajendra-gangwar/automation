@@ -17,12 +17,10 @@ def gitStuff = [
 def inclusions = "main"
 def exclusions = "dev"
 
-def workspacePath = "${System.getenv('WORKSPACE')}"
-def jobName = "${System.getenv('JOB_NAME')}"
-def filePath = "${workspacePath}/${jobName}/projects.json"
 
 
-def gitStuffJson = new File(filePath).text
+// Reading projects detail from file
+def gitStuffJson = new File('workspace/automation/projects.json').text
 def gitStuff = new JsonSlurper().parseText(gitStuffJson)
 
 
