@@ -17,15 +17,17 @@ def gitStuff = [
 def inclusions = "main"
 def exclusions = "dev"
 
-def gitStuffJson = new File('../projects.json').text
-def gitStuff = new JsonSlurper().parseText(gitStuffJson)
-
-
 // Get the current working directory
 def currentDirectory = System.getProperty("user.dir")
 
 // Print the current directory
 println "Current directory: ${currentDirectory}"
+
+def gitStuffJson = new File('../projects.json').text
+def gitStuff = new JsonSlurper().parseText(gitStuffJson)
+
+
+
 
 
 
