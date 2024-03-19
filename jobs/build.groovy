@@ -23,12 +23,8 @@ def currentDirectory = System.getProperty("user.dir")
 // Print the current directory
 println "Current directory: ${currentDirectory}"
 
-def gitStuffJson = new File('../projects.json').text
+def gitStuffJson = new File('projects.json').text
 def gitStuff = new JsonSlurper().parseText(gitStuffJson)
-
-
-
-
 
 
 gitStuff.each{ entry ->
