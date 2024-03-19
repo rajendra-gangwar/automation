@@ -17,13 +17,12 @@ def gitStuff = [
 def inclusions = "main"
 def exclusions = "dev"
 
-// Get the current working directory
-def currentDirectory = System.getProperty("user.dir")
 
-// Print the current directory
-println "Current directory: ${currentDirectory}"
+def relativePath = 'projects.json'
+def absolutePath = "${System.getProperty('user.dir')}/${relativePath}"
+println "Absolute path: ${absolutePath}"
 
-def gitStuffJson = new File('projects.json').text
+def gitStuffJson = new File(absolutePath).text
 def gitStuff = new JsonSlurper().parseText(gitStuffJson)
 
 
