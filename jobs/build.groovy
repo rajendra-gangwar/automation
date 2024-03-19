@@ -12,8 +12,8 @@ def gitStuff = [
     ]
 ]
 
-inclusions = "main"
-excludes = "dev"
+def inclusions = "main"
+def excludes = "dev"
 
 gitStuff.each{ Map entry ->
     multibranchPipelineJob("${entry.repo}-autobuild") {
