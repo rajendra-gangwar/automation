@@ -21,7 +21,7 @@ def exclusions = "dev"
 // println "ls -a".execute().text
 
 // Reading projects detail from file
-def gitStuffJson = new File("{$env.WORKSPACE}/projects.json").text
+def gitStuffJson = new File("${env.WORKSPACE}/projects.json").text
 def gitStuff = new JsonSlurper().parseText(gitStuffJson)
 
 
