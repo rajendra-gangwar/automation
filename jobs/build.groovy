@@ -17,7 +17,8 @@ def gitStuff = [
 def inclusions = "main"
 def exclusions = "dev"
 
-
+// debug to list files
+println "ls -a".execute().text
 
 // Reading projects detail from file
 def gitStuffJson = new File('projects.json').text
