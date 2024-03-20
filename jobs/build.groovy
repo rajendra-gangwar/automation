@@ -20,8 +20,11 @@ def exclusions = "dev"
 // debug to list files
 // println "ls -a".execute().text
 
+def currentDirectory = System.getProperty("user.dir")
+println "$currentDirectory"
+
 // Reading projects detail from file
-def gitStuffJson = new File("${env.WORKSPACE}/projects.json").text
+def gitStuffJson = new File("${currentDirectory}/projects.json").text
 def gitStuff = new JsonSlurper().parseText(gitStuffJson)
 
 
