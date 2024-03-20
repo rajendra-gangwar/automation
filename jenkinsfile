@@ -5,7 +5,7 @@ node {
     jobDsl targets: ['jobs/*.groovy'].join('\n'),
         removedJobAction: 'DELETE',
         removedViewAction: 'DELETE',
-        additionalParameters: [worspace_dir: "${WORKSPACE}"]
+        additionalParameters: [worspace_dir: "${env.WORKSPACE}"]
 }
 
 
