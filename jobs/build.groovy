@@ -17,13 +17,9 @@ def gitStuff = [
 def inclusions = "main"
 def exclusions = "dev"
 
-// debug to list files
-// println "ls -a".execute().text
-// working but not fetching jenkins home
-// def currentDirectory = System.getProperty("user.dir")
+def currentDirectory = System.getProperty("user.dir")
 
-def currentDir = Paths.get(".").toAbsolutePath().normalize().toString()
-println "$currentDir"
+println "$currentDirectory"
 
 // Reading projects detail from file
 def gitStuffJson = new File("${currentDirectory}/projects.json").text
