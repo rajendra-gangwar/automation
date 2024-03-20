@@ -17,12 +17,12 @@ def gitStuff = [
 def inclusions = "main"
 def exclusions = "dev"
 
-def currentDirectory = System.getProperty("user.dir")
+//def currentDirectory = System.getProperty("user.dir")
 
-println "$currentDirectory"
+//println "$currentDirectory"
 
 // Reading projects detail from file
-def gitStuffJson = new File("projects.json").text
+def gitStuffJson = new File("${workspace_dir}/projects.json").text
 def gitStuff = new JsonSlurper().parseText(gitStuffJson)
 
 
