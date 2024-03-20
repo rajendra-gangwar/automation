@@ -10,6 +10,12 @@
         "url": "https://github.com/rajendra-gangwar/",
         "user": "jenkins",
         "repo": "terraform-cicd"
+    },
+    {
+        "project": "",
+        "url": "https://github.com/rajendra-gangwar/",
+        "user": "jenkins",
+        "repo": "aws-sqs"
     }
 ]
 
