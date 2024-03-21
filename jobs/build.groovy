@@ -21,7 +21,7 @@ def gitStuff = [
 //def currentjenkinsUrl = Jenkins.instance.getRootUrl()
 
 // define a map for inclusive and exclusive based on jenkins URL
-currentJenkinsUrl = "${jenkins_url}
+currentJenkinsUrl = "${jenkins_url}"
 def jenkinsUrls = [
     'localhost': ['inclusive': 'main', 'exclusive': 'dev master*'],   
     'jenkins.qa.local': ['inclusive': 'master', 'exclusive': 'dev dev*'],        
