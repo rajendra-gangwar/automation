@@ -16,7 +16,8 @@ def gitStuff = [
 
 //def inclusions = "main"
 //def exclusions = "dev"
-
+println "Jenkins URL from additional parameter"
+println "${jenkins_url}"
 // Get the jenkins URL
 def currentjenkinsUrl = Jenkins.instance.getRootUrl()
 
