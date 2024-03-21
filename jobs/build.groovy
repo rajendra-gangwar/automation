@@ -14,8 +14,27 @@ def gitStuff = [
 ]
 */
 
-def inclusions = "main"
-def exclusions = "dev"
+//def inclusions = "main"
+//def exclusions = "dev"
+
+// Get the jenkins URL
+def currentjenkinsUrl = Jenkins.instance.getRootUrl()
+
+// define a map for inclusive and exclusive based on jenkins URL
+
+def jenkinsUrls = [
+    'localhost': ['inclusive': 'main', 'exclusive': 'dev master*'],   
+    'jenkins.qa.local': ['inclusive': 'master', 'exclusive': 'dev dev*'],        
+]
+
+jenkinsUrls.each { url, values ->
+    if (currentJenkinsUrl.contains(url)) {
+        inclusive = values['inclusive']
+        exclusive = values['exclusive']
+        return // Exit the loop once a match is found
+    }
+}
+
 
 //def currentDirectory = System.getProperty("user.dir")
 
