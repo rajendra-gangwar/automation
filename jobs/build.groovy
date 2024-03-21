@@ -19,7 +19,7 @@ def gitStuff = [
 println "Jenkins URL from additional parameter"
 println "${jenkins_url}"
 // Get the jenkins URL
-def currentjenkinsUrl = Jenkins.instance.getRootUrl()
+//def currentjenkinsUrl = Jenkins.instance.getRootUrl()
 
 // define a map for inclusive and exclusive based on jenkins URL
 
