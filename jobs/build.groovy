@@ -23,17 +23,15 @@ def gitStuff = [
 // define a map for inclusive and exclusive based on jenkins URL
 currentJenkinsUrl = "${jenkins_url}"
 def jenkinsUrls = [
-    'localhost': ['inclusive': 'main', 'exclusive': 'dev master*'],   
-    'jenkins-69738551.eu-central-1.elb.amazonaws.com': ['inclusive': 'master main', 'exclusive': 'dev dev*'],        
+    'localhost': 'poc',   
+    'jenkins-69738551.eu-central-1.elb.amazonaws.com': 'dev'    
 ]
 
-jenkinsUrls.each { url, values ->
-    if (currentJenkinsUrl.contains(url)) {
-        inclusions = values['inclusive']
-        exclusions = values['exclusive']
-        return // Exit the loop once a match is found
+jenkinsUrls.each { url, env ->
+    if (currentJenkinsUrl == url) {
+        prefix = env
+        }
     }
-}
 
 
 //def currentDirectory = System.getProperty("user.dir")
@@ -41,7 +39,7 @@ jenkinsUrls.each { url, values ->
 //println "$currentDirectory"
 
 // Reading projects detail from file
-def gitStuffJson = new File("${workspace_dir}/projects.json").text
+def gitStuffJson = new File("${workspace_dir}/${env}-projects.json").text
 def gitStuff = new JsonSlurper().parseText(gitStuffJson)
 
 
@@ -68,8 +66,8 @@ gitStuff.each{ entry ->
                               }
                             }
                             headWildcardFilter {
-                              includes(inclusions)
-                              excludes(exclusions)
+                              includes("${entry.inclusion}")
+                              excludes("${entry.exclusions}")
                             }
                             submoduleOptionTrait {
                                 extension{
