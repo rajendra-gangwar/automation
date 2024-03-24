@@ -29,8 +29,8 @@ def jenkinsUrls = [
 
 jenkinsUrls.each { url, values ->
     if (currentJenkinsUrl.contains(url)) {
-        inclusive = values['inclusive']
-        exclusive = values['exclusive']
+        inclusions = values['inclusive']
+        exclusions = values['exclusive']
         return // Exit the loop once a match is found
     }
 }
