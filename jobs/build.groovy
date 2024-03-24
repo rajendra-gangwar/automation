@@ -27,12 +27,15 @@ def jenkinsUrls = [
     'jenkins-69738551.eu-central-1.elb.amazonaws.com': 'dev'    
 ]
 
+println "jenkins url ${jenkins_url}"
+
 jenkinsUrls.each { url, env ->
     if (currentJenkinsUrl == url) {
         prefix = env
         }
     }
 
+println "Projects file env: ${prefix}"
 
 //def currentDirectory = System.getProperty("user.dir")
 
