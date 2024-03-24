@@ -3,24 +3,24 @@
         "project": "",
         "url": "https://github.com/rajendra-gangwar/",
         "user": "jenkins",
-        "repo": "cicd-infra"
-        "inclusion": "dev poc"
+        "repo": "cicd-infra",
+        "inclusion": "dev poc",
         "exclusions": "main master"
     },
     {
         "project": "",
         "url": "https://github.com/rajendra-gangwar/",
         "user": "jenkins",
-        "repo": "terraform-cicd"
-        "inclusion": "qa"
+        "repo": "terraform-cicd",
+        "inclusion": "qa",
         "exclusions": "master"
     },
     {
         "project": "",
         "url": "https://github.com/rajendra-gangwar/",
         "user": "jenkins",
-        "repo": "aws-sqs"
-        "inclusion": "poc"
+        "repo": "aws-sqs",
+        "inclusion": "poc",
         "exclusions": "master*"
     }
 ]
