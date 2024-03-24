@@ -44,7 +44,7 @@ println "Projects file env: ${prefix}"
 //println "$currentDirectory"
 
 // Reading projects detail from file
-def gitStuffJson = new File("${workspace_dir}/${env}-projects.json").text
+def gitStuffJson = new File("${workspace_dir}/${prefix}-projects.json").text
 def gitStuff = new JsonSlurper().parseText(gitStuffJson)
 
 
