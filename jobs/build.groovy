@@ -29,6 +29,8 @@ def jenkinsUrls = [
 
 println "jenkins url ${jenkins_url}"
 
+def prefix
+
 jenkinsUrls.each { url, env ->
     if (currentJenkinsUrl == url) {
         prefix = env
