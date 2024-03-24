@@ -31,9 +31,9 @@ println "jenkins url ${jenkins_url}"
 
 def prefix
 
-jenkinsUrls.each { url, env ->
+jenkinsUrls.each { url, config_prefix ->
     if (currentJenkinsUrl == url) {
-        prefix = env
+        prefix = config_prefix
         }
     }
 
