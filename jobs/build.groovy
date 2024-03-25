@@ -23,7 +23,7 @@ def gitStuff = [
 // define a map for inclusive and exclusive based on jenkins URL
 currentJenkinsUrl = "${jenkins_url}"
 def jenkinsUrls = [
-    '8085-port-2b31b44145264a22.labs.kodekloud.com': 'dev',   
+    '8085-port-2b31b44145264a22': 'dev',   
     'jenkins-69738551.eu-central-1.elb.amazonaws.com': 'dev'    
 ]
 
