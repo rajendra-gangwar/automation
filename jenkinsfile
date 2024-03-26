@@ -7,6 +7,12 @@ node {
         removedViewAction: 'DELETE',
         additionalParameters: [workspace_dir: "${env.WORKSPACE}", jenkins_url: "${env.JENKINS_URL}"]
 }
-
+post {
+    always {
+        script {
+            slackNotifier(currentBuild.result)
+        }
+    }
+}
 
 
