@@ -4,7 +4,7 @@ String stashUrl = 'git@github.com:rajendra-gangwar'
 //String stashUser = 'jenkins' //commenting to test fail case notification
 
 // define a map for inclusive and exclusive based on jenkins URL
-currentJenkinsUrl = "${jenkins_url}"
+//currentJenkinsUrl = "${jenkins_url}"
 def jenkinsUrls = [
     '8085-port': 'dev',   
     'jenkins-69738551.eu-central-1.elb.amazonaws.com': 'dev'    
@@ -12,7 +12,7 @@ def jenkinsUrls = [
 
 println "jenkins url ${jenkins_url}"
 
-def prefix
+//def prefix
 
 jenkinsUrls.each { url, config_prefix ->
     if (currentJenkinsUrl.contains(url)) {
