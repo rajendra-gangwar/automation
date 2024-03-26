@@ -12,12 +12,9 @@ pipeline {
                 }
             }
             post {
-                    failure {
-                        slackSend (channel: "build-alert", failOnError: true, message: "Build failed \nJOB Name: ${env.JOB_NAME}\n BUILD NUMBER: ${env.BUILD_NUMBER}\n Build URL: <${env.BUILD_URL}|Open>")
+                    always {
+                        slackSend (channel: "build-alert" | message: "${buildStatus} - <${env.JENKINS_URL}/blue/organizations/jenkins/${projectName}/detail/${env.BRANCH_NAME}/${env.BUILD_NUMBER}/pipeline | ${jobName}> [build ${env.BUILD_NUMBER}]")
                          }
-                    success {
-                        slackSend (channel: "build-alert",message: "Build successfully \nJOB Name: ${env.JOB_NAME} \n BUILD NUMBER: ${env.BUILD_NUMBER}\n Build URL: <${env.BUILD_URL}|Open>")
-                    }
             }
         }
     }
