@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('Job DSL') {
             steps {
