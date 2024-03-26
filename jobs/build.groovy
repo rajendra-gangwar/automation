@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper
 
 String stashUrl = 'git@github.com:rajendra-gangwar'
-String stashUser = 'jenkins'
+//String stashUser = 'jenkins' //commenting to test fail case notification
 
 // define a map for inclusive and exclusive based on jenkins URL
 currentJenkinsUrl = "${jenkins_url}"
