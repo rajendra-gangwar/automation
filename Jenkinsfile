@@ -13,8 +13,11 @@ pipeline {
             }
             post {
                     always {
-                        slackSend(channel: "build-alert", message: "${buildStatus} - <${env.JENKINS_URL}/blue/organizations/jenkins/${projectName}/detail/${env.BRANCH_NAME}/${env.BUILD_NUMBER}/pipeline | ${jobName}> [build ${env.BUILD_NUMBER}]")
+                        script {
+                            def buildStatus = currentBuild.currentResult ?: 'UNKNOWN'
+                            slackSend(channel: "build-alert", message: "${buildStatus} - <${env.JENKINS_URL}/blue/organizations/jenkins/${projectName}/detail/${env.BRANCH_NAME}/${env.BUILD_NUMBER}/pipeline | ${jobName}> [build ${env.BUILD_NUMBER}]")
                          }
+                    }
             }
         }
     }
