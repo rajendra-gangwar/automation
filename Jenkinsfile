@@ -15,7 +15,7 @@ pipeline {
                     always {
                         script {
                             def buildStatus = currentBuild.currentResult ?: 'UNKNOWN'
-                            slackSend(channel: "build-alert", message: "${buildStatus} - <${env.JENKINS_URL}/blue/organizations/jenkins/${projectName}/detail/${env.BRANCH_NAME}/${env.BUILD_NUMBER}/pipeline | ${jobName}> [build ${env.BUILD_NUMBER}]")
+                            slackSend(channel: "build-alert", message: "${buildStatus} - <${env.JENKINS_URL}/blue/organizations/jenkins/${env.JOB_NAME}/detail/${env.BRANCH_NAME}/${env.BUILD_NUMBER}/pipeline | ${env.JOB_NAME}> [build ${env.BUILD_NUMBER}]")
                          }
                     }
             }
