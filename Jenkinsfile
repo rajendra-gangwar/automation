@@ -17,7 +17,7 @@ pipeline {
                          }. 
                          */
                     success {
-                        slackSend (channel: "build-alert",message: "Build deployed successfully - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)")
+                        slackSend (channel: "build-alert",message: "Build deployed successfully \nJOB Name: ${env.JOB_NAME} \n BUILD NUMBER: ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)")
                     }
             }
         }
