@@ -14,6 +14,7 @@ pipeline {
             post {
                 always {
                     script {
+                        sh 'cd vars'
                         slackNotifier(currentBuild.result)
                     }
                 }
