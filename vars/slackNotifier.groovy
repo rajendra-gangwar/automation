@@ -36,22 +36,11 @@ def call( String buildStatus = 'STARTED',
       print ('Could not find ' + slackBotOfUser + '.. sending the notification to ' + destChannel);
     }
 
-    if('dev' == branchName 
-       ||  branchName ==~ '(.)*RELEASE(.)*'
-       || 'qa' == branchName 
-       || 'qa-k8s' == branchName 
-       || 'dev-k8s' == branchName 
-       || 'main' == branchName
-       || authorNotFound) {
       slackSend(channel: destChannel,
               color: color,
               message: msg,
               teamDomain: destTeamDomain,
-              tokenCredentialId:'slack-token'
-        )
-    } else {
-      print(branchName + ' is not develop or qa or  master or Tagged RELEASE.. skip ' + destChannel + ' notification')
-    }
+              tokenCredentialId:'slack-token')
   }
 }
 
