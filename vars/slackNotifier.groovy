@@ -29,7 +29,7 @@ def call( String buildStatus = 'STARTED',
               color: color,
               message: msg,
               teamDomain: destTeamDomain,
-              tokenCredentialId:'slack'
+              tokenCredentialId:'slack-token'
         )
     } catch (exc) {
       authorNotFound = true
