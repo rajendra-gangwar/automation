@@ -1,5 +1,6 @@
 #!groovy​
 import groovy.json.JsonSlurper
+@Library('BuildUtils') _
 
 pipeline {
     agent any
