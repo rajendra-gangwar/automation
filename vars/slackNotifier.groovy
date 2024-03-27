@@ -41,6 +41,7 @@ def call( String buildStatus = 'STARTED',
        || 'qa' == branchName 
        || 'qa-k8s' == branchName 
        || 'dev-k8s' == branchName 
+       || 'main' == branchName
        || authorNotFound) {
       slackSend(channel: destChannel,
               color: color,
