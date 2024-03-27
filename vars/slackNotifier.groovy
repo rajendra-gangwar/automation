@@ -46,7 +46,7 @@ def call( String buildStatus = 'STARTED',
               color: color,
               message: msg,
               teamDomain: destTeamDomain,
-              tokenCredentialId:'slack_token'
+              tokenCredentialId:'slack-token'
         )
     } else {
       print(branchName + ' is not develop or qa or  master or Tagged RELEASE.. skip ' + destChannel + ' notification')
