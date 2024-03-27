@@ -2,7 +2,7 @@
 import groovy.json.JsonSlurper
 
 def call( String buildStatus = 'STARTED',
-          String destChannel = 'build-alerts' ,
+          String destChannel = 'build-alert' ,
           String destTeamDomain = 'innovation-dvy1427') {
   // build status of null means successful
   buildStatus =  buildStatus ?: 'SUCCESS'
