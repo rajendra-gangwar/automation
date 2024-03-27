@@ -1,3 +1,7 @@
+#!groovy​
+import groovy.json.JsonSlurper
+@Library('BuildUtils') _
+
 pipeline {
     agent any
     stages {
@@ -13,8 +17,8 @@ pipeline {
             post {
                     always {
                         script {
-                            def buildStatus = currentBuild.currentResult ?: 'UNKNOWN'
-                            slackSend(channel: "build-alert", message: "${buildStatus} - <${env.JENKINS_URL}/blue/organizations/jenkins/${env.JOB_NAME}/detail/${env.BRANCH_NAME}/${env.BUILD_NUMBER}/pipeline | Job Name - ${env.JOB_NAME}> [build ${env.BUILD_NUMBER}]")
+                             slackNotifier(currentBuild.result)
+                             cleanWs()
                          }
                     }
             }
