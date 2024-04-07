@@ -3,6 +3,7 @@ node {
     properties([pipelineTriggers([pollSCM('')])])
     checkout scm
     jobDsl targets: ['jobs/*.groovy'].join('\n'),
+        ignoreExisting: true,
         removedJobAction: 'DELETE',
         removedViewAction: 'DELETE',
         additionalParameters: [workspace_dir: "${env.WORKSPACE}", jenkins_url: "${env.JENKINS_URL}"]
