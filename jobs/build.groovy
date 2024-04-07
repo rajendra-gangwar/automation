@@ -24,7 +24,7 @@ def gitStuff = [
 currentJenkinsUrl = "${jenkins_url}"
 def jenkinsUrls = [
     'localhost': ['inclusive': 'main', 'exclusive': 'dev master*'],   
-    'jenkins-69738551.eu-central-1.elb.amazonaws.com': ['inclusive': 'master main', 'exclusive': 'dev dev*'],        
+    '8085-port': ['inclusive': 'master main', 'exclusive': 'dev dev*'],        
 ]
 
 jenkinsUrls.each { url, values ->
